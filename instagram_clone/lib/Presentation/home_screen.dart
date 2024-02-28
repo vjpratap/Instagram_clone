@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/Models/user.dart';
+import 'package:instagram_clone/Presentation/stories_view.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -31,9 +33,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      body: Center(
-        child: Text('Page ${_selectedIndex + 1}',
-            style: Theme.of(context).textTheme.bodySmall),
+      body: Container(
+        color: Colors.yellow,
+        child: Text("Page1")
       ),
       bottomNavigationBar: BottomNavigationBar(
         iconSize: 32,

@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         textTheme: TextTheme(
-          //Body Small
+          //Body Large
           bodyLarge: GoogleFonts.greatVibes(
               fontSize: 28, fontWeight: FontWeight.w500, color: Colors.black),
 
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           bodyMedium: GoogleFonts.outfit(
               fontSize: 18, fontWeight: FontWeight.w500, color: Colors.black),
 
-          //Body Large
+          //Body Small
           bodySmall: GoogleFonts.outfit(
               fontSize: 16, fontWeight: FontWeight.w400, color: Colors.black),
         ),
