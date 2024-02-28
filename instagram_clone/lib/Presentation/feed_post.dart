@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/Models/feed.dart';
+
 class FeedPost extends StatelessWidget {
   const FeedPost({super.key, required this.feed});
 
@@ -9,14 +10,14 @@ class FeedPost extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-         Padding(
+        Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Row(
             children: [
-               CircleAvatar(
+              CircleAvatar(
                 radius: 15.0, // Set the radius to define the size of the circle
                 backgroundImage: NetworkImage(
-                    feed.images.first['standard_resolution']), // Provide your image asset
+                    feed.images.first.toString()), // Provide your image asset
               ),
               const SizedBox(
                 width: 8,

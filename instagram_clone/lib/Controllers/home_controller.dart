@@ -5,7 +5,6 @@ import 'package:instagram_clone/Models/feed.dart';
 
 class HomeController extends GetxController {
   RxList<Feed> feedList = <Feed>[].obs;
-
   @override
   void onInit() {
     super.onInit();
@@ -24,5 +23,6 @@ class HomeController extends GetxController {
     } catch (e) {
       print('Error fetching data: $e');
     }
+    print(feedList);
   }
 }

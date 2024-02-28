@@ -12,8 +12,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
- final HomeController controller = Get.put(HomeController());
-
+  final HomeController controller = Get.put(HomeController());
 
   void _onItemTapped(int index) {
     setState(() {
@@ -36,15 +35,13 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      body: GetBuilder<HomeController>(
-        builder: (controller) { 
-          return ListView.builder(
+      body: GetBuilder<HomeController>(builder: (controller) {
+        return ListView.builder(
             itemCount: controller.feedList.length,
             itemBuilder: (BuildContext context, int index) {
-            return FeedPost(feed: controller.feedList[index]);
-          });
-        }
-        ),
+              return FeedPost(feed: controller.feedList[index]);
+            });
+      }),
       bottomNavigationBar: BottomNavigationBar(
         iconSize: 32,
         type: BottomNavigationBarType.fixed, // Set type to fixed
