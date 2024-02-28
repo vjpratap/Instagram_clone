@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
-
+import 'package:instagram_clone/Models/feed.dart';
 class FeedPost extends StatelessWidget {
-  const FeedPost({super.key});
+  const FeedPost({super.key, required this.feed});
+
+  final Feed feed;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8.0),
+         Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Row(
             children: [
-              CircleAvatar(
+               CircleAvatar(
                 radius: 15.0, // Set the radius to define the size of the circle
                 backgroundImage: NetworkImage(
-                    'https://fastly.picsum.photos/id/27/3264/1836.jpg?hmac=p3BVIgKKQpHhfGRRCbsi2MCAzw8mWBCayBsKxxtWO8g'), // Provide your image asset
+                    feed.images.first['standard_resolution']), // Provide your image asset
               ),
-              SizedBox(
+              const SizedBox(
                 width: 8,
               ),
-              Text("Ankur Jain")
+              Text(feed.user.fullName)
             ],
           ),
         ),

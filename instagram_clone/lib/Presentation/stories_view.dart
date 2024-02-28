@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:instagram_clone/Models/user.dart';
 
 class StoryView extends StatefulWidget {

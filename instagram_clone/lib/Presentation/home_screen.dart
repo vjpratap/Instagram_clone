@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/Models/user.dart';
+import 'package:get/get.dart';
+import 'package:instagram_clone/Controllers/home_controller.dart';
 import 'package:instagram_clone/Presentation/feed_post.dart';
-import 'package:instagram_clone/Presentation/stories_view.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,6 +12,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
+ final HomeController controller = Get.put(HomeController());
+
 
   void _onItemTapped(int index) {
     setState(() {
@@ -34,7 +36,15 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      body: const FeedPost(),
+      body: GetBuilder<HomeController>(
+        builder: (controller) { 
+          return ListView.builder(
+            itemCount: controller.feedList.length,
+            itemBuilder: (BuildContext context, int index) {
+            return FeedPost(feed: controller.feedList[index]);
+          });
+        }
+        ),
       bottomNavigationBar: BottomNavigationBar(
         iconSize: 32,
         type: BottomNavigationBarType.fixed, // Set type to fixed
