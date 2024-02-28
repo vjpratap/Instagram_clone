@@ -10,7 +10,7 @@ class FeedPost extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Row(
             children: [
               CircleAvatar(
@@ -96,7 +96,7 @@ class FeedPost extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: '${feed.likes.data.first.username} ',
-                        style:  TextStyle(fontWeight: FontWeight.bold, color: Colors.black)
+                        style:  const TextStyle(fontWeight: FontWeight.bold, color: Colors.black)
                       ),
                       TextSpan(
                         text: 'and ',
@@ -104,7 +104,7 @@ class FeedPost extends StatelessWidget {
                       ),
                       TextSpan(
                         text: '${feed.likes.count} others',
-                        style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+                        style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
                       )
                     ]
                   ),
@@ -112,7 +112,20 @@ class FeedPost extends StatelessWidget {
               )
             ],
           ),
+        ),
+        SizedBox(height: 8,),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: Row(
+            children: [
+              Text(feed.user.username, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.black),),
+              const SizedBox(width: 4,),
+              Text('${feed.caption}', style: Theme.of(context).textTheme.bodySmall,)
+            ],
+          ),
         )
+
+
       ],
     );
   }
