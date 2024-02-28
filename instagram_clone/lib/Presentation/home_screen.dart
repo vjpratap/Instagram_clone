@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/Models/user.dart';
+import 'package:instagram_clone/Presentation/feed_post.dart';
 import 'package:instagram_clone/Presentation/stories_view.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -25,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Row(
           children: [
             const SizedBox(
-                width: 8), // Add some spacing between the icon and the title
+                width: 4), // Add some spacing between the icon and the title
             Text(
               'Instagram',
               style: Theme.of(context).textTheme.bodyLarge,
@@ -33,10 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      body: Container(
-        color: Colors.yellow,
-        child: Text("Page1")
-      ),
+      body: const FeedPost(),
       bottomNavigationBar: BottomNavigationBar(
         iconSize: 32,
         type: BottomNavigationBarType.fixed, // Set type to fixed
