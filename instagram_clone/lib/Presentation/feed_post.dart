@@ -15,14 +15,13 @@ class FeedPost extends StatelessWidget {
           child: Row(
             children: [
               CircleAvatar(
-                radius: 15.0, // Set the radius to define the size of the circle
-                backgroundImage: NetworkImage(
-                    feed.images.first.toString()), // Provide your image asset
+                radius: 15.0,
+                backgroundImage: NetworkImage(feed.user.profilePicture),
               ),
               const SizedBox(
                 width: 8,
               ),
-              Text(feed.user.fullName)
+              Text(feed.user.username)
             ],
           ),
         ),
@@ -30,9 +29,9 @@ class FeedPost extends StatelessWidget {
           height: 8,
         ),
         Card(
-          elevation: 4, // Controls the size of the shadow below the card
+          elevation: 4,
           child: Image.network(
-            'https://fastly.picsum.photos/id/17/2500/1667.jpg?hmac=HD-JrnNUZjFiP2UZQvWcKrgLoC_pc_ouUSWv8kHsJJY', // Replace with your image URL
+            feed.images.standardResolution.url,
             loadingBuilder: (BuildContext context, Widget child,
                 ImageChunkEvent? loadingProgress) {
               if (loadingProgress == null) {

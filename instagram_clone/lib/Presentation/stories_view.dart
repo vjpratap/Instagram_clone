@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:instagram_clone/Models/user.dart';
 
 class StoryView extends StatefulWidget {
-  const StoryView({required this.stories, super.key});
+  StoryView({required this.stories, super.key});
 
-  final List<User> stories;
+  List<User> stories;
 
   @override
   State<StoryView> createState() => _StoryViewState();

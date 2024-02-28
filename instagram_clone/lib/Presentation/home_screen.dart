@@ -4,7 +4,7 @@ import 'package:instagram_clone/Controllers/home_controller.dart';
 import 'package:instagram_clone/Presentation/feed_post.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -12,7 +12,13 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
-  final HomeController controller = Get.put(HomeController());
+  final HomeController _controller = Get.put(HomeController());
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
   void _onItemTapped(int index) {
     setState(() {
@@ -35,11 +41,12 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      body: GetBuilder<HomeController>(builder: (controller) {
+      // ignore: unrelated_type_equality_checks
+      body: Obx(() {
         return ListView.builder(
-            itemCount: controller.feedList.length,
+            itemCount: _controller.feedList.length,
             itemBuilder: (BuildContext context, int index) {
-              return FeedPost(feed: controller.feedList[index]);
+              return FeedPost(feed: _controller.feedList[index]);
             });
       }),
       bottomNavigationBar: BottomNavigationBar(
