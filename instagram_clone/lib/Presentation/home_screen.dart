@@ -16,7 +16,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
@@ -33,20 +32,22 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Row(
           children: [
             const SizedBox(
-                width: 4), // Add some spacing between the icon and the title
+                width: 4),
             Text(
               'Instagram',
               style: Theme.of(context).textTheme.bodyLarge,
-            ), // Your title text
+            ),
           ],
         ),
       ),
-      // ignore: unrelated_type_equality_checks
       body: Obx(() {
         return ListView.builder(
             itemCount: _controller.feedList.length,
             itemBuilder: (BuildContext context, int index) {
-              return FeedPost(feed: _controller.feedList[index]);
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: FeedPost(feed: _controller.feedList[index]),
+              );
             });
       }),
       bottomNavigationBar: BottomNavigationBar(
