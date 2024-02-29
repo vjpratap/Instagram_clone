@@ -18,6 +18,7 @@ class HomeController extends GetxController {
         final List<dynamic> jsonList = json.decode(response.body);
         List<Feed> feeds = jsonList.map((json) => Feed.fromJson(json)).toList();
         feedList.value = feeds;
+        update();
       } else {
         throw Exception('Failed to load data');
       }

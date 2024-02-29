@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:instagram_clone/Controllers/home_controller.dart';
 import 'package:instagram_clone/Presentation/feed_post.dart';
+import 'package:instagram_clone/Presentation/feed_screen.dart';
+import 'package:instagram_clone/Presentation/profile_screen.dart';
+import 'package:instagram_clone/Models/user.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -12,44 +15,40 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
-  final HomeController _controller = Get.put(HomeController());
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
 
+  Widget activeScreen() {
+    if (_selectedIndex == 0) {
+      return const FeedScreen();
+    } else if (_selectedIndex == 4) {
+      return ProfileScreen(
+        user: User(
+          username: "iamankurjain",
+          profilePicture: "",
+          id: "",
+          fullName: "Ankur Jain",
+        ),
+      );
+    } else { 
+      return ProfileScreen(
+        user: User(
+          username: "iamankurjain",
+          profilePicture: "",
+          id: "",
+          fullName: "Ankur Jain",
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          children: [
-            const SizedBox(
-                width: 4),
-            Text(
-              'Instagram',
-              style: Theme.of(context).textTheme.bodyLarge,
-            ),
-          ],
-        ),
-      ),
-      body: Obx(() {
-        return ListView.builder(
-            itemCount: _controller.feedList.length,
-            itemBuilder: (BuildContext context, int index) {
-              return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: FeedPost(feed: _controller.feedList[index]),
-              );
-            });
-      }),
+      body: activeScreen(),
       bottomNavigationBar: BottomNavigationBar(
         iconSize: 32,
         type: BottomNavigationBarType.fixed, // Set type to fixed
