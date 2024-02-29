@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:instagram_clone/Models/feed.dart';
 
 class HomeController extends GetxController {
-  RxList<Feed> feedList = <Feed>[].obs;
+  List<Feed> feedList = <Feed>[];
   @override
   void onInit() {
     super.onInit();
@@ -17,7 +17,7 @@ class HomeController extends GetxController {
       if (response.statusCode == 200) {
         final List<dynamic> jsonList = json.decode(response.body);
         List<Feed> feeds = jsonList.map((json) => Feed.fromJson(json)).toList();
-        feedList.value = feeds;
+        feedList = feeds;
         update();
       } else {
         throw Exception('Failed to load data');
