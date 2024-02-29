@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:instagram_clone/Controllers/home_controller.dart';
-import 'package:instagram_clone/Presentation/feed_post.dart';
 import 'package:instagram_clone/Presentation/feed_screen.dart';
 import 'package:instagram_clone/Presentation/profile_screen.dart';
 import 'package:instagram_clone/Models/user.dart';
@@ -33,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
           fullName: "Ankur Jain",
         ),
       );
-    } else { 
+    } else {
       return ProfileScreen(
         user: User(
           username: "iamankurjain",
