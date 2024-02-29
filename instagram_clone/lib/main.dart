@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:instagram_clone/Presentation/home_screen.dart';
 import 'package:get/get.dart';
-import 'package:instagram_clone/bloc/insta_story_bloc/insta_story_events.dart';
-import 'package:instagram_clone/bloc/insta_story_bloc/insta_story_bloc.dart';
 
 void main() {
   runApp(const MyApp());

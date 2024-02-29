@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:instagram_clone/bloc/insta_story_bloc.dart';
-import 'package:instagram_clone/bloc/states/insta_story_state.dart'; // Import InstaStoryState
+import 'package:instagram_clone/bloc/insta_story_bloc/insta_story_bloc.dart';
+import 'package:instagram_clone/bloc/insta_story_bloc/insta_story_state.dart';
 
 class StoryView extends StatelessWidget {
   const StoryView({super.key});
@@ -25,7 +25,6 @@ class StoryView extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     CircleAvatar(
-                      backgroundColor: Colors.red,
                       backgroundImage: NetworkImage(story.imageUrl),
                       radius: 30,
                     ),

@@ -1,7 +1,7 @@
-import 'package:instagram_clone/bloc/events/insta_story_events.dart';
-import 'package:instagram_clone/bloc/states/insta_story_state.dart';
-import '../Models/insta_story.dart';
-import 'package:flutter_bloc/flutter_bloc.dart'; // Import InstaStoryState
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:instagram_clone/Models/insta_story.dart';
+import 'package:instagram_clone/bloc/insta_story_bloc/insta_story_events.dart';
+import 'package:instagram_clone/bloc/insta_story_bloc/insta_story_state.dart'; // Import InstaStoryState
 
 class InstaStoryBloc extends Bloc<InstaStoryEvent, InstaStoryState> {
   List<InstaStory> stories = [

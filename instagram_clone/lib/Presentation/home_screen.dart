@@ -4,7 +4,7 @@ import 'package:instagram_clone/Presentation/profile_screen.dart';
 import 'package:instagram_clone/Models/user.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
