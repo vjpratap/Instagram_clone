@@ -1,4 +1,5 @@
 import 'package:instagram_clone/Models/user.dart';
+import 'package:instagram_clone/Models/insta_story.dart';
 
 class Feed {
   List<String> tags;
@@ -14,39 +15,43 @@ class Feed {
   bool userHasLiked;
   String id;
   User user;
+  List<InstaStory> instaStories;
 
-  Feed({
-    required this.tags,
-    required this.type,
-    required this.comments,
-    required this.filter,
-    required this.createdTime,
-    required this.link,
-    required this.likes,
-    required this.images,
-    required this.usersInPhoto,
-    required this.caption,
-    required this.userHasLiked,
-    required this.id,
-    required this.user,
-  });
+  Feed(
+      {required this.tags,
+      required this.type,
+      required this.comments,
+      required this.filter,
+      required this.createdTime,
+      required this.link,
+      required this.likes,
+      required this.images,
+      required this.usersInPhoto,
+      required this.caption,
+      required this.userHasLiked,
+      required this.id,
+      required this.user,
+      required this.instaStories});
 
   factory Feed.fromJson(Map<String, dynamic> json) {
     return Feed(
-      tags: List<String>.from(json['tags'] ?? []),
-      type: json['type'] ?? '',
-      comments: List<Comment>.from((json['comments']['data'] ?? []).map((comment) => Comment.fromJson(comment))),
-      filter: json['filter'] ?? '',
-      createdTime: json['created_time'] ?? '',
-      link: json['link'] ?? '',
-      likes: Likes.fromJson(json['likes']),
-      images: Images.fromJson(json['images']),
-      usersInPhoto: List<UserInPhoto>.from((json['users_in_photo'] ?? []).map((userInPhoto) => UserInPhoto.fromJson(userInPhoto))),
-      caption: Caption.fromJson(json['caption']),
-      userHasLiked: json['user_has_liked'] ?? false,
-      id: json['id'] ?? '',
-      user: User.fromJson(json['user']),
-    );
+        tags: List<String>.from(json['tags'] ?? []),
+        type: json['type'] ?? '',
+        comments: List<Comment>.from((json['comments']['data'] ?? [])
+            .map((comment) => Comment.fromJson(comment))),
+        filter: json['filter'] ?? '',
+        createdTime: json['created_time'] ?? '',
+        link: json['link'] ?? '',
+        likes: Likes.fromJson(json['likes']),
+        images: Images.fromJson(json['images']),
+        usersInPhoto: List<UserInPhoto>.from((json['users_in_photo'] ?? [])
+            .map((userInPhoto) => UserInPhoto.fromJson(userInPhoto))),
+        caption: Caption.fromJson(json['caption']),
+        userHasLiked: json['user_has_liked'] ?? false,
+        id: json['id'] ?? '',
+        user: User.fromJson(json['user']),
+        instaStories: List<InstaStory>.from((json['insta_stories'] ?? [])
+            .map((instaStories) => InstaStory.fromJson(instaStories))));
   }
 }
 
@@ -85,7 +90,8 @@ class Likes {
   factory Likes.fromJson(Map<String, dynamic> json) {
     return Likes(
       count: json['count'] ?? 0,
-      data: List<User>.from((json['data'] ?? []).map((user) => User.fromJson(user))),
+      data: List<User>.from(
+          (json['data'] ?? []).map((user) => User.fromJson(user))),
     );
   }
 }
@@ -186,5 +192,3 @@ class Caption {
     );
   }
 }
-
-
