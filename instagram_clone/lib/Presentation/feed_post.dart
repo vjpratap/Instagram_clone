@@ -10,7 +10,7 @@ class FeedPost extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Row(
             children: [
               CircleAvatar(
@@ -51,11 +51,13 @@ class FeedPost extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 8.0),
           child: Row(
             children: [
-              Icon(Icons.heart_broken),
+              Icon(Icons.favorite_outline),
               SizedBox(width: 16),
-              Icon(Icons.comment),
+              Icon(Icons.comment_outlined),
               SizedBox(width: 16),
-              Icon(Icons.share)
+              Icon(Icons.share),
+              Spacer(),
+              Icon(Icons.bookmark_outline)
             ],
           ),
         ),
@@ -113,7 +115,7 @@ class FeedPost extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 8,),
+        const SizedBox(height: 8,),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Row(
