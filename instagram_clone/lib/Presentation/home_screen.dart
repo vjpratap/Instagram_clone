@@ -12,7 +12,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
-  final HomeController _controller = Get.put(HomeController());
 
   @override
   void initState() {
@@ -40,16 +39,19 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      body: Obx(() {
-        return ListView.builder(
-            itemCount: _controller.feedList.length,
+      body: GetBuilder<HomeController>(
+        init: HomeController(),
+        builder: (controller){
+          return ListView.builder(
+            itemCount: controller.feedList.length,
             itemBuilder: (BuildContext context, int index) {
               return Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: FeedPost(feed: _controller.feedList[index]),
+                child: FeedPost(feed: controller.feedList[index]),
               );
             });
-      }),
+        },
+      ),
       bottomNavigationBar: BottomNavigationBar(
         iconSize: 32,
         type: BottomNavigationBarType.fixed, // Set type to fixed
