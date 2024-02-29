@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/Models/feed.dart';
+import 'package:intl/intl.dart';
 
 class FeedPost extends StatelessWidget {
   const FeedPost({super.key, required this.feed});
   final Feed feed;
+
+
+  String getCreatedTime() { 
+    DateTime dateTime = DateTime.fromMillisecondsSinceEpoch(int.parse(feed.createdTime) * 1000);
+    String formattedDate = DateFormat('dd MMMM', 'en_US').format(dateTime);
+    return formattedDate;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -125,9 +133,17 @@ class FeedPost extends StatelessWidget {
               Text('${feed.caption}', style: Theme.of(context).textTheme.bodySmall,)
             ],
           ),
+        ),
+
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: Row(
+            children: [
+              Text(getCreatedTime(), style: Theme.of(context).textTheme.labelSmall,),
+              const Spacer()
+            ],
+          ),
         )
-
-
       ],
     );
   }
