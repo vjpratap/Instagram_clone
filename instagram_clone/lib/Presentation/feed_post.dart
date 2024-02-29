@@ -7,7 +7,7 @@ class FeedPost extends StatelessWidget {
   final Feed feed;
 
 
-  String getCreatedTime() { 
+  String _getCreatedTime() { 
     DateTime dateTime = DateTime.fromMillisecondsSinceEpoch(int.parse(feed.createdTime) * 1000);
     String formattedDate = DateFormat('dd MMMM', 'en_US').format(dateTime);
     return formattedDate;
@@ -139,7 +139,7 @@ class FeedPost extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Row(
             children: [
-              Text(getCreatedTime(), style: Theme.of(context).textTheme.labelSmall,),
+              Text(_getCreatedTime(), style: Theme.of(context).textTheme.labelSmall,),
               const Spacer()
             ],
           ),
