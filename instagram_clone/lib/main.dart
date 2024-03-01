@@ -26,10 +26,15 @@ class MyApp extends StatelessWidget {
             //Body Small
             bodySmall: GoogleFonts.outfit(
                 fontSize: 12, fontWeight: FontWeight.w500, color: Colors.black),
+
+            //username bold in small body
+            headlineLarge: GoogleFonts.outfit(
+                fontSize: 12, fontWeight: FontWeight.bold, color: Colors.black),
           ),
+          iconTheme: const IconThemeData(color: Colors.black54),
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: HomeScreen());
+        home: const HomeScreen());
   }
 }

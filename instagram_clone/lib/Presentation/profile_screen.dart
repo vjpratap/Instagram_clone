@@ -7,7 +7,7 @@ import 'package:instagram_clone/Cubit/discover_people_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProfileScreen extends StatefulWidget {
-  ProfileScreen({super.key, required this.user});
+  const ProfileScreen({super.key, required this.user});
 
   final User user;
 
@@ -18,7 +18,7 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   final UserRepository userRepository = UserRepository();
 
-   DiscoverPeopleCubit discoverPeopleCubit =
+  DiscoverPeopleCubit discoverPeopleCubit =
       DiscoverPeopleCubit(UserRepository());
 
   @override
@@ -60,9 +60,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
               const SizedBox(height: 8),
               Row(
                 children: [
-                 Text("Discover people", style: Theme.of(context).textTheme.bodySmall),
+                  Text("Discover people",
+                      style: Theme.of(context).textTheme.bodySmall),
                   Spacer(),
-                  TextButton(onPressed: (){}, child: const Text("See All", style: TextStyle(color: Colors.blue),))
+                  TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "See All",
+                        style: TextStyle(color: Colors.blue),
+                      ))
                 ],
               ),
               BlocProvider(
