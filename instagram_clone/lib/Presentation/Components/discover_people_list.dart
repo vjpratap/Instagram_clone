@@ -14,7 +14,7 @@ class DiscoverPeopleList extends StatelessWidget {
     return BlocBuilder<DiscoverPeopleCubit, List<User>>(
         bloc: discoverPeopleCubit,
         builder: (context, users) {
-          return Container(
+          return SizedBox(
             height: 224,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,

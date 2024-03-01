@@ -18,7 +18,7 @@ class UserRepository {
       }
     } catch (e) {
       print('Exception caught while fetching users: $e');
-      throw e;
+      rethrow;
     }
   }
 }

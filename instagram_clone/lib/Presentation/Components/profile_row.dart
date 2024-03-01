@@ -42,18 +42,18 @@ class ProfileRow extends StatelessWidget {
               const SizedBox(
                 width: 36,
               ),
-              Column(
+              const Column(
                 children: [Text('0'), Text('posts')],
               ),
-              Column(
+              const Column(
                 children: [Text('3'), Text('followers')],
               ),
-              Column(
+              const Column(
                 children: [Text('20'), Text('following')],
               ),
             ],
           ),
-          SizedBox(height: 16,),
+          const SizedBox(height: 16,),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -74,7 +74,7 @@ class ProfileRow extends StatelessWidget {
                   child: const Text('Share profile', style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black),),
                 ),
               ),
-              IconButton(onPressed: (){}, icon: Icon(Icons.people_alt_rounded, size: 24,))
+              IconButton(onPressed: (){}, icon: const Icon(Icons.people_alt_rounded, size: 24,))
             ],
           )
         ],

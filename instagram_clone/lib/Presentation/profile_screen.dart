@@ -7,7 +7,7 @@ import 'package:instagram_clone/Cubit/discover_people_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProfileScreen extends StatefulWidget {
-  ProfileScreen({super.key, required this.user});
+  const ProfileScreen({super.key, required this.user});
 
   final User user;
 
@@ -50,7 +50,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
         ),
         body: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
               const ProfileRow(),
@@ -61,7 +61,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Row(
                 children: [
                  Text("Discover people", style: Theme.of(context).textTheme.bodySmall),
-                  Spacer(),
+                  const Spacer(),
                   TextButton(onPressed: (){}, child: const Text("See All", style: TextStyle(color: Colors.blue),))
                 ],
               ),
