@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/widget/profile_data_widget.dart';
 
 class ProfileRow extends StatelessWidget {
   const ProfileRow({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final ButtonStyle style =
-        ElevatedButton.styleFrom(
-          textStyle: const TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
-         shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4))),
-         padding: const EdgeInsets.symmetric(horizontal: 36),         
-         );
+    final ButtonStyle style = ElevatedButton.styleFrom(
+      textStyle:
+          const TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(4))),
+      padding: const EdgeInsets.symmetric(horizontal: 36),
+    );
     return Container(
       child: Column(
         children: [
@@ -42,39 +44,48 @@ class ProfileRow extends StatelessWidget {
               const SizedBox(
                 width: 36,
               ),
-              const Column(
-                children: [Text('0'), Text('posts')],
-              ),
-              const Column(
-                children: [Text('3'), Text('followers')],
-              ),
-              const Column(
-                children: [Text('20'), Text('following')],
-              ),
+              const ProfileDataWidget(valueCount: '0', valueText: 'posts'),
+              const ProfileDataWidget(valueCount: '3', valueText: 'followers'),
+              const ProfileDataWidget(valueCount: '0', valueText: 'following')
             ],
           ),
-          const SizedBox(height: 16,),
+          const SizedBox(
+            height: 16,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               SizedBox(
                 height: 28,
+                width: 150,
                 child: ElevatedButton(
-                  style: style,
+                  style: Theme.of(context).elevatedButtonTheme.style,
                   onPressed: null,
-                  child: const Text('Edit profile', style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black),),
+                  child: Text('Edit profile',
+                      style: Theme.of(context).textTheme.headlineLarge),
                 ),
               ),
-              const SizedBox(width: 4,),
+              const SizedBox(
+                width: 4,
+              ),
               SizedBox(
                 height: 28,
+                width: 150,
                 child: ElevatedButton(
-                  style: style,
+                  style: Theme.of(context).elevatedButtonTheme.style,
                   onPressed: null,
-                  child: const Text('Share profile', style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black),),
+                  child: Text(
+                    'Share profile',
+                    style: Theme.of(context).textTheme.headlineLarge,
+                  ),
                 ),
               ),
-              IconButton(onPressed: (){}, icon: const Icon(Icons.people_alt_rounded, size: 24,))
+              IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.people_alt_rounded,
+                    size: 24,
+                  ))
             ],
           )
         ],

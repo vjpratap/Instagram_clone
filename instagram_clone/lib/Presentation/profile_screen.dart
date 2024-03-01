@@ -37,8 +37,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               const SizedBox(width: 4),
               Text(
                 widget.user.username,
-                style: const TextStyle(
-                    fontWeight: FontWeight.bold, color: Colors.black),
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
               const Spacer(),
               const Icon(Icons.add_box_outlined),
