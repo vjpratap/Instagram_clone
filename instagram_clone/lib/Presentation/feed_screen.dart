@@ -17,6 +17,28 @@ class FeedScreen extends StatefulWidget {
 class _FeedScreenState extends State<FeedScreen> {
   final HomeController _controller = Get.put(HomeController());
 
+  Widget loadData(HomeController controller) {
+    switch (controller.state.state) {
+      case FeedsState.loading:
+        return const Center(
+          child: CircularProgressIndicator(), // This displays a spinning indicator
+        );
+      case FeedsState.success:
+        return Expanded(
+          child: ListView.builder(
+              itemCount: controller.state.feeds.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: FeedPost(feed: controller.state.feeds[index]),
+                );
+              }),
+        );
+      case FeedsState.failure:
+        return const Center(child: Icon(Icons.error));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,16 +62,8 @@ class _FeedScreenState extends State<FeedScreen> {
                 create: (context) => InstaStoryBloc()..add(LoadInstaStories()),
                 child: const StoryView(),
               ),
-              Expanded(
-                child: ListView.builder(
-                    itemCount: controller.feedList.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: FeedPost(feed: controller.feedList[index]),
-                      );
-                    }),
-              )
+
+              loadData(controller)
             ],
           );
         },

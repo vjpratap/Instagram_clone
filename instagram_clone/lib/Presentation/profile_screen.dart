@@ -50,7 +50,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
         ),
         body: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
               const ProfileRow(),
@@ -62,7 +62,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 children: [
                   Text("Discover people",
                       style: Theme.of(context).textTheme.bodySmall),
-                  Spacer(),
+                  const Spacer(),
                   TextButton(
                       onPressed: () {},
                       child: const Text(
