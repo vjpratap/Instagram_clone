@@ -24,9 +24,25 @@ class StoryView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    CircleAvatar(
-                      backgroundImage: NetworkImage(story.imageUrl),
-                      radius: 30,
+                    Center(
+                      child: Stack(children: [
+                        CircleAvatar(
+                          backgroundImage: NetworkImage(story.imageUrl),
+                          radius: 30,
+                        ),
+                        Container(
+                          width: 30 * 2,
+                          height: 30 * 2,
+                          decoration: BoxDecoration(
+                            color: Colors.transparent,
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: Colors.blue,
+                              width: 3.0,
+                            ),
+                          ),
+                        ),
+                      ]),
                     ),
                     const SizedBox(height: 5),
                     Text(story.username,
