@@ -6,15 +6,7 @@ class ProfileRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ButtonStyle style = ElevatedButton.styleFrom(
-      textStyle:
-          const TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
-      shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(4))),
-      padding: const EdgeInsets.symmetric(horizontal: 36),
-    );
-    return Container(
-      child: Column(
+    return Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -89,7 +81,6 @@ class ProfileRow extends StatelessWidget {
             ],
           )
         ],
-      ),
-    );
+      );
   }
 }

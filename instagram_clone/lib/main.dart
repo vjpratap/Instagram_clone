@@ -9,7 +9,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -29,7 +28,7 @@ class MyApp extends StatelessWidget {
 
             //username bold in small body
             headlineLarge: GoogleFonts.outfit(
-                fontSize: 12, fontWeight: FontWeight.bold, color: Colors.black),
+                fontSize: 14, fontWeight: FontWeight.bold, color: Colors.black),
           ),
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ButtonStyle(

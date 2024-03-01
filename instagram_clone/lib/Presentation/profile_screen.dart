@@ -16,15 +16,12 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  final UserRepository userRepository = UserRepository();
-
-  DiscoverPeopleCubit discoverPeopleCubit =
+   DiscoverPeopleCubit discoverPeopleCubit =
       DiscoverPeopleCubit(UserRepository());
 
   @override
   void initState() {
     super.initState();
-    discoverPeopleCubit = DiscoverPeopleCubit(UserRepository());
     discoverPeopleCubit.fetchUsers();
   }
 
