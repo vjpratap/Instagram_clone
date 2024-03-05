@@ -17,8 +17,17 @@ enum FeedsState {
   failure,
 }
 
+abstract class FeedScreenState{}
+
+class FeedLoadingState extends FeedScreenState {}
+class FeedSuccessState extends FeedScreenState {
+  final List<Feed> feeds;
+  FeedSuccessState(this.feeds);
+}
+class FeedFailureState extends FeedScreenState {}
+
 class HomeController extends GetxController {
- StatusWithValue state = StatusWithValue(FeedsState.loading, []);
+ FeedScreenState state = FeedLoadingState();
   @override
   void onInit() {
     super.onInit();
@@ -32,12 +41,12 @@ class HomeController extends GetxController {
         final List<dynamic> jsonList = json.decode(response.body);
         List<Feed> feeds = jsonList.map((json) => Feed.fromJson(json)).toList();
         // feedList = feeds;
-        state = StatusWithValue(FeedsState.success, feeds);
+        state = FeedSuccessState(feeds);
       } else {
-        state = StatusWithValue(FeedsState.failure, []);
+        state = FeedFailureState();
       }
     } catch (e) {
-        state = StatusWithValue(FeedsState.failure, []);
+        state = FeedFailureState();
     }
     update();
   }

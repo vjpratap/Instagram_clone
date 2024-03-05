@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:instagram_clone/Feeds/feed.dart';
 import 'package:instagram_clone/Feeds/home_controller.dart';
 import 'package:instagram_clone/Feeds/feed_post.dart';
 import 'package:instagram_clone/Feeds/stories_view.dart';
@@ -17,57 +18,62 @@ class FeedScreen extends StatefulWidget {
 class _FeedScreenState extends State<FeedScreen> {
   final HomeController _controller = Get.put(HomeController());
 
-  Widget loadData(HomeController controller) {
-    switch (controller.state.state) {
-      case FeedsState.loading:
-        return const Center(
-          child: CircularProgressIndicator(), // This displays a spinning indicator
-        );
-      case FeedsState.success:
-        return Expanded(
-          child: ListView.builder(
-              itemCount: controller.state.feeds.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: FeedPost(feed: controller.state.feeds[index]),
-                );
-              }),
-        );
-      case FeedsState.failure:
-        return const Center(child: Icon(Icons.error));
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          children: [
-            const SizedBox(width: 4),
-            Text(
-              'Instagram',
-              style: Theme.of(context).textTheme.bodyLarge,
-            ),
-          ],
+ Widget loadData(HomeController controller) {
+  List<Feed> feeds;
+  switch (controller.state.runtimeType) {
+    case FeedLoadingState:
+      return const Center(
+        child: CircularProgressIndicator(),
+      );
+    case FeedSuccessState:
+      feeds = (controller.state as FeedSuccessState).feeds;
+      return Expanded(
+        child: ListView.builder(
+          itemCount: feeds.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: FeedPost(feed: feeds[index]),
+            );
+          },
         ),
-      ),
-      body: GetBuilder<HomeController>(
-        init: _controller,
-        builder: (controller) {
-          return Column(
-            children: [
-              BlocProvider(
-                create: (context) => InstaStoryBloc()..add(LoadInstaStories()),
-                child: const StoryView(),
-              ),
-
-              loadData(controller)
-            ],
-          );
-        },
-      ),
-    );
+      );
+    case FeedFailureState:
+      return const Center(child: Icon(Icons.error));
+    default:
+      return Container(); // Handle any other cases or return an empty container
   }
+}
+
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: Row(
+        children: [
+          const SizedBox(width: 4),
+          Text(
+            'Instagram',
+            style: Theme.of(context).textTheme.bodyLarge,
+          ),
+        ],
+      ),
+    ),
+    body: GetBuilder<HomeController>(
+      init: _controller,
+      builder: (controller) {
+        return Column(
+          children: [
+            BlocProvider(
+              create: (context) => InstaStoryBloc()..add(LoadInstaStories()),
+              child: const StoryView(),
+            ),
+            loadData(controller),
+          ],
+        );
+      },
+    ),
+  );
+}
+
 }
