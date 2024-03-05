@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import '../Models/user.dart';
 import 'package:instagram_clone/Utility/url.dart';
@@ -16,7 +17,7 @@ class UserRepository {
         throw Exception('Failed to fetch users');
       }
     } catch (e) {
-      print('Exception caught while fetching users: $e');
+      debugPrint('Exception occured');
       rethrow;
     }
   }

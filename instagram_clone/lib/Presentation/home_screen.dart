@@ -10,19 +10,18 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
-  int _selectedIndex = 0;
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+class _HomeScreenState extends State<HomeScreen>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 5, vsync: this);
   }
 
-  Widget activeScreen() {
-    if (_selectedIndex == 0) {
-      return const FeedScreen();
-    } else if (_selectedIndex == 4) {
-      return ProfileScreen(
+  Widget get profileScreen { 
+    return ProfileScreen(
         user: User(
           username: "iamankurjain",
           profilePicture: "",
@@ -30,52 +29,34 @@ class _HomeScreenState extends State<HomeScreen> {
           fullName: "Ankur Jain",
         ),
       );
-    } else {
-      return ProfileScreen(
-        user: User(
-          username: "iamankurjain",
-          profilePicture: "",
-          id: "",
-          fullName: "Ankur Jain",
-        ),
-      );
-    }
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: activeScreen(),
-      bottomNavigationBar: BottomNavigationBar(
-        iconSize: 32,
-        type: BottomNavigationBarType.fixed, // Set type to fixed
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.search,
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add_box_rounded),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.play_arrow),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: '',
-          ),
+      body: TabBarView(
+        controller: _tabController,
+        children: [
+          const FeedScreen(),
+          profileScreen,
+          profileScreen,
+          profileScreen,
+          profileScreen,
         ],
       ),
+      bottomNavigationBar: Container(
+      color: Colors.white,
+      child: TabBar(
+        controller: _tabController,
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        tabs: const [
+          Tab(icon: Icon(Icons.home),),
+          Tab(icon: Icon(Icons.search)),
+          Tab(icon: Icon(Icons.add_box_rounded)),
+          Tab(icon: Icon(Icons.play_arrow)),
+          Tab(icon: Icon(Icons.person)),
+        ],
+      ),
+    ),
     );
   }
 }
