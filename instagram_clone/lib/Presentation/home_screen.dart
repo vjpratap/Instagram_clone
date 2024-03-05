@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/Presentation/Components/home_botttom_bar.dart';
 import 'package:instagram_clone/Presentation/feed_screen.dart';
 import 'package:instagram_clone/Presentation/profile_screen.dart';
 import 'package:instagram_clone/Models/user.dart';
@@ -43,20 +44,7 @@ class _HomeScreenState extends State<HomeScreen>
           profileScreen,
         ],
       ),
-      bottomNavigationBar: Container(
-      color: Colors.white,
-      child: TabBar(
-        controller: _tabController,
-        padding: const EdgeInsets.symmetric(vertical: 8),
-        tabs: const [
-          Tab(icon: Icon(Icons.home),),
-          Tab(icon: Icon(Icons.search)),
-          Tab(icon: Icon(Icons.add_box_rounded)),
-          Tab(icon: Icon(Icons.play_arrow)),
-          Tab(icon: Icon(Icons.person)),
-        ],
-      ),
-    ),
+      bottomNavigationBar: HomeBottomBar(tabController: _tabController)
     );
   }
 }
