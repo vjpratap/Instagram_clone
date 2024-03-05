@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:instagram_clone/Models/feed.dart';
+import 'package:instagram_clone/Feeds/feed.dart';
 import 'package:instagram_clone/Utility/url.dart';
 
 class StatusWithValue {

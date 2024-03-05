@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:instagram_clone/Models/insta_story.dart';
+import 'package:instagram_clone/Feeds/insta_story.dart';
 import 'package:instagram_clone/Feeds/insta_story_events.dart';
 import 'package:instagram_clone/Feeds/insta_story_state.dart'; // Import InstaStoryState
 

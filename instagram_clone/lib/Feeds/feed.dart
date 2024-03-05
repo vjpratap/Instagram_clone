@@ -1,5 +1,5 @@
-import 'package:instagram_clone/Models/user.dart';
-import 'package:instagram_clone/Models/insta_story.dart';
+import 'package:instagram_clone/Feeds/user.dart';
+import 'package:instagram_clone/Feeds/insta_story.dart';
 
 class Feed {
   List<String> tags;

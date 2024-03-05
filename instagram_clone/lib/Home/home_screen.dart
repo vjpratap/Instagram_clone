@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:instagram_clone/Home/home_botttom_bar.dart';
 import 'package:instagram_clone/Feeds/feed_screen.dart';
 import 'package:instagram_clone/Profile/profile_screen.dart';
-import 'package:instagram_clone/Models/user.dart';
+import 'package:instagram_clone/Feeds/user.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

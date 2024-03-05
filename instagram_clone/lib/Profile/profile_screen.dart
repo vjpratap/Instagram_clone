@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/Models/user.dart';
+import 'package:instagram_clone/Feeds/user.dart';
 import 'package:instagram_clone/Profile/discover_people_list.dart';
 import 'package:instagram_clone/Profile/profile_row.dart';
 import 'package:instagram_clone/Repository/user_repository.dart';

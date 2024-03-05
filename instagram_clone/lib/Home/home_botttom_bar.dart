@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class HomeBottomBar extends StatefulWidget {
    HomeBottomBar({super.key, required this.tabController});
     late TabController tabController;
@@ -9,7 +10,6 @@ class HomeBottomBar extends StatefulWidget {
 }
 
 class _HomeBottomBarState extends State<HomeBottomBar> with SingleTickerProviderStateMixin {
-
 
   @override
   Widget build(BuildContext context) {
