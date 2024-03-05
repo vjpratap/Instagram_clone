@@ -1,23 +1,11 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:instagram_clone/Feeds/feed.dart';
 import 'package:instagram_clone/Utility/url.dart';
 
-class StatusWithValue {
-  final FeedsState state;
-  final List<Feed> feeds;
-
-  StatusWithValue(this.state, this.feeds);
-}
-
-enum FeedsState {
-  loading,
-  success,
-  failure,
-}
-
-abstract class FeedScreenState{}
+sealed class FeedScreenState{}
 
 class FeedLoadingState extends FeedScreenState {}
 class FeedSuccessState extends FeedScreenState {
@@ -27,7 +15,7 @@ class FeedSuccessState extends FeedScreenState {
 class FeedFailureState extends FeedScreenState {}
 
 class HomeController extends GetxController {
- FeedScreenState state = FeedLoadingState();
+  FeedScreenState state = FeedLoadingState();
   @override
   void onInit() {
     super.onInit();

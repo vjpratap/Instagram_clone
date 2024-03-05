@@ -9,7 +9,9 @@ class User {
     required this.profilePicture,
     required this.id,
     required this.fullName,
-  });
+  }) {
+    // TODO: implement User
+  }
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(

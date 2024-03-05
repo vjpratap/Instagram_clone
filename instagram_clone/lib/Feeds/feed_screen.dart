@@ -18,7 +18,7 @@ class FeedScreen extends StatefulWidget {
 class _FeedScreenState extends State<FeedScreen> {
   final HomeController _controller = Get.put(HomeController());
 
- Widget loadData(HomeController controller) {
+  Widget loadData(HomeController controller) {
   List<Feed> feeds;
   switch (controller.state.runtimeType) {
     case FeedLoadingState:
