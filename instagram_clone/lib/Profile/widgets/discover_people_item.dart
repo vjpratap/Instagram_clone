@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/Feeds/user.dart';
+import 'package:instagram_clone/Feeds/Models/user.dart';
 
 class DiscoverPeopleItem extends StatelessWidget {
   const DiscoverPeopleItem({super.key, required this.user});

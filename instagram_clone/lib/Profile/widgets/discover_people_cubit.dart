@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:instagram_clone/Feeds/user.dart';
+import 'package:instagram_clone/Feeds/Models/user.dart';
 import 'package:instagram_clone/Repository/user_repository.dart';
 
 class DiscoverPeopleCubit extends Cubit<List<User>> {

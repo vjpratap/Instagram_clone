@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/Feeds/feed.dart';
+import 'package:instagram_clone/Feeds/Models/feed.dart';
 
 class FeedPostIconsRow extends StatelessWidget {
   const FeedPostIconsRow({super.key, required this.feed});

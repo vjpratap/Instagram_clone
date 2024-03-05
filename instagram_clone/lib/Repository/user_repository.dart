@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import '../Feeds/user.dart';
+import '../Feeds/Models/user.dart';
 import 'package:instagram_clone/Utility/url.dart';
 
 class UserRepository {

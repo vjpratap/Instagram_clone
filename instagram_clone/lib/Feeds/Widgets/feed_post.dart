@@ -5,7 +5,7 @@ import 'package:instagram_clone/Feeds/Widgets/feed_post_created_time_row.dart';
 import 'package:instagram_clone/Feeds/Widgets/feed_post_icons_row.dart';
 import 'package:instagram_clone/Feeds/Widgets/feed_post_liked_row.dart';
 import 'package:instagram_clone/Feeds/Widgets/feed_post_title_row.dart';
-import 'package:instagram_clone/Feeds/feed.dart';
+import 'package:instagram_clone/Feeds/Models/feed.dart';
 
 class FeedPost extends StatelessWidget {
   const FeedPost({super.key, required this.feed});

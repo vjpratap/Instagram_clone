@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/Feeds/feed.dart';
+import 'package:instagram_clone/Feeds/Models/feed.dart';
 
 class FeedPostLikedRow extends StatelessWidget {
   const FeedPostLikedRow({super.key, required this.feed});

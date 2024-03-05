@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/Feeds/feed.dart';
+import 'package:instagram_clone/Feeds/Models/feed.dart';
 import 'package:intl/intl.dart';
 
 class FeedPostCreatedTimeRow extends StatelessWidget {

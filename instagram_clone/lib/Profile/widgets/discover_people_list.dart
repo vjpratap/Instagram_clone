@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/Profile/discover_people_item.dart';
-import 'package:instagram_clone/Feeds/user.dart';
-import 'package:instagram_clone/Profile/discover_people_cubit.dart';
+import 'package:instagram_clone/Profile/widgets/discover_people_item.dart';
+import 'package:instagram_clone/Feeds/Models/user.dart';
+import 'package:instagram_clone/Profile/widgets/discover_people_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DiscoverPeopleList extends StatelessWidget {
