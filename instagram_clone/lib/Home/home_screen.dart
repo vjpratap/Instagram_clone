@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/Presentation/Components/home_botttom_bar.dart';
-import 'package:instagram_clone/Presentation/feed_screen.dart';
-import 'package:instagram_clone/Presentation/profile_screen.dart';
+import 'package:instagram_clone/Home/home_botttom_bar.dart';
+import 'package:instagram_clone/Feeds/feed_screen.dart';
+import 'package:instagram_clone/Profile/profile_screen.dart';
 import 'package:instagram_clone/Models/user.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -31,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen>
         ),
       );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

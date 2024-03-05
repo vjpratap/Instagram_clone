@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:instagram_clone/bloc/insta_story_bloc/insta_story_bloc.dart';
-import 'package:instagram_clone/bloc/insta_story_bloc/insta_story_state.dart';
+import 'package:instagram_clone/Feeds/insta_story_bloc.dart';
+import 'package:instagram_clone/Feeds/insta_story_state.dart';
 
 class StoryView extends StatelessWidget {
   const StoryView({super.key});

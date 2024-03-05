@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/Models/user.dart';
-import 'package:instagram_clone/Presentation/Components/discover_people_list.dart';
-import 'package:instagram_clone/Presentation/Components/profile_row.dart';
+import 'package:instagram_clone/Profile/discover_people_list.dart';
+import 'package:instagram_clone/Profile/profile_row.dart';
 import 'package:instagram_clone/Repository/user_repository.dart';
-import 'package:instagram_clone/Cubit/discover_people_cubit.dart';
+import 'package:instagram_clone/Profile/discover_people_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProfileScreen extends StatefulWidget {

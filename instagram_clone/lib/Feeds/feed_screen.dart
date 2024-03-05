@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:instagram_clone/Controllers/home_controller.dart';
-import 'package:instagram_clone/Presentation/feed_post.dart';
-import 'package:instagram_clone/Presentation/stories_view.dart';
-import 'package:instagram_clone/bloc/insta_story_bloc/insta_story_events.dart';
-import 'package:instagram_clone/bloc/insta_story_bloc/insta_story_bloc.dart';
+import 'package:instagram_clone/Feeds/home_controller.dart';
+import 'package:instagram_clone/Feeds/feed_post.dart';
+import 'package:instagram_clone/Feeds/stories_view.dart';
+import 'package:instagram_clone/Feeds/insta_story_events.dart';
+import 'package:instagram_clone/Feeds/insta_story_bloc.dart';
 
 class FeedScreen extends StatefulWidget {
   const FeedScreen({super.key});

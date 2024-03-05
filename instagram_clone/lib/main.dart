@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:instagram_clone/Presentation/home_screen.dart';
+import 'package:instagram_clone/Home/home_screen.dart';
 import 'package:get/get.dart';
 
 void main() {

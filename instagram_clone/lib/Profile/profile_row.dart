@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_clone/widget/profile_data_widget.dart';
+import 'package:instagram_clone/Profile/profile_data_widget.dart';
 
 class ProfileRow extends StatelessWidget {
   const ProfileRow({super.key});
